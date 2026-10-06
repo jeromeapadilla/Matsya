@@ -6,11 +6,11 @@ import { ArrowRight, Check, ChevronDown, Leaf, Minus, Plus, ShoppingBag, Sparkle
 type User = { name: string; email: string } | null;
 type Product = { id: string; name: string; description: string; price: number; accent: string; position: string; image?: string; filter?: string; badge?: string };
 const products: Product[] = [
-  { id: "matcha-taho", name: "Matcha Taho", description: "Premium matcha · silken taho · arnibal · pearls", price: 8.5, accent: "#456b1d", position: "center", image: "/images/matsya-logo-1.png", badge: "Bestseller" },
-  { id: "strawberry-matcha-taho", name: "Strawberry Matcha Taho", description: "Strawberry compote · matcha · taho · pearls", price: 9, accent: "#c94548", position: "65%" },
-  { id: "ube-matcha-taho", name: "Ube Matcha Taho", description: "Ube halaya · matcha · taho · pearls", price: 9, accent: "#6e3c95", position: "36%" },
-  { id: "blueberry-matcha-taho", name: "Blueberry Matcha Taho", description: "Blueberry compote · matcha · taho · pearls", price: 9, accent: "#40598f", position: "65%", filter: "hue-rotate(55deg) saturate(.85)" },
-  { id: "mango-matcha-taho", name: "Mango Matcha Taho", description: "Mango purée · matcha · taho · pearls", price: 9, accent: "#d98f20", position: "7%", filter: "hue-rotate(300deg) saturate(1.15)" },
+  { id: "matcha-taho", name: "Matcha Taho", description: "Premium matcha · silken taho · arnibal · pearls", price: 8.5, accent: "#456b1d", position: "center", image: "/images/drink-matcha-taho.png", badge: "Bestseller" },
+  { id: "strawberry-matcha-taho", name: "Strawberry Matcha Taho", description: "Strawberry compote · matcha · taho · pearls", price: 9, accent: "#c94548", position: "center", image: "/images/drink-strawberry-matcha-taho.png" },
+  { id: "ube-matcha-taho", name: "Ube Matcha Taho", description: "Ube halaya · matcha · taho · pearls", price: 9, accent: "#6e3c95", position: "center", image: "/images/drink-ube-matcha-taho.png" },
+  { id: "blueberry-matcha-taho", name: "Blueberry Matcha Taho", description: "Blueberry compote · matcha · taho · pearls", price: 9, accent: "#40598f", position: "center", image: "/images/drink-blueberry-matcha-taho.png" },
+  { id: "mango-matcha-taho", name: "Mango Matcha Taho", description: "Mango purée · matcha · taho · pearls", price: 9, accent: "#d98f20", position: "center", image: "/images/drink-mango-matcha-taho.png" },
 ];
 type Cart = Record<string, number>;
 
