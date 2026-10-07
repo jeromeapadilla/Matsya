@@ -1,9 +1,9 @@
 const products = [
-  {id:'matcha',name:'Matcha Taho',desc:'Premium matcha · silken taho · arnibal · pearls',price:8.5,image:'./public/images/drink-matcha-taho.png',fit:'contain',accent:'#456b1d'},
-  {id:'strawberry',name:'Strawberry Matcha Taho',desc:'Strawberry compote · matcha · taho · pearls',price:9,image:'./public/images/drink-strawberry-matcha-taho.png',fit:'contain',accent:'#c94548'},
-  {id:'ube',name:'Ube Matcha Taho',desc:'Ube halaya · matcha · taho · pearls',price:9,image:'./public/images/drink-ube-matcha-taho.png',fit:'contain',accent:'#6e3c95'},
-  {id:'blueberry',name:'Blueberry Matcha Taho',desc:'Blueberry compote · matcha · taho · pearls',price:9,image:'./public/images/drink-blueberry-matcha-taho.png',fit:'contain',accent:'#40598f'},
-  {id:'mango',name:'Mango Matcha Taho',desc:'Mango purée · matcha · taho · pearls',price:9,image:'./public/images/drink-mango-matcha-taho.png',fit:'contain',accent:'#d98f20'}
+  {id:'matcha',name:'Matcha Taho',desc:'Premium matcha · silken taho · arnibal · pearls',price:8.5,image:'./public/images/drink-matcha-taho.png?v=20261007-1',accent:'#456b1d'},
+  {id:'strawberry',name:'Strawberry Matcha Taho',desc:'Strawberry compote · matcha · taho · pearls',price:9,image:'./public/images/drink-strawberry-matcha-taho.png?v=20261007-1',accent:'#c94548'},
+  {id:'ube',name:'Ube Matcha Taho',desc:'Ube halaya · matcha · taho · pearls',price:9,image:'./public/images/drink-ube-matcha-taho.png?v=20261007-1',accent:'#6e3c95'},
+  {id:'blueberry',name:'Blueberry Matcha Taho',desc:'Blueberry compote · matcha · taho · pearls',price:9,image:'./public/images/drink-blueberry-matcha-taho.png?v=20261007-1',accent:'#40598f'},
+  {id:'mango',name:'Mango Matcha Taho',desc:'Mango purée · matcha · taho · pearls',price:9,image:'./public/images/drink-mango-matcha-taho.png?v=20261007-1',accent:'#d98f20'}
 ];
 let cart = JSON.parse(localStorage.getItem('matsya-pages-cart') || '{}');
 let promo = false;
