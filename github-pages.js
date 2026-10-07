@@ -1,9 +1,9 @@
 const products = [
-  {id:'matcha',name:'Matcha Taho',desc:'Premium matcha · silken taho · arnibal · pearls',price:8.5,image:'./public/images/drink-matcha-taho.png?v=20261007-1',accent:'#456b1d'},
-  {id:'strawberry',name:'Strawberry Matcha Taho',desc:'Strawberry compote · matcha · taho · pearls',price:9,image:'./public/images/drink-strawberry-matcha-taho.png?v=20261007-1',accent:'#c94548'},
-  {id:'ube',name:'Ube Matcha Taho',desc:'Ube halaya · matcha · taho · pearls',price:9,image:'./public/images/drink-ube-matcha-taho.png?v=20261007-1',accent:'#6e3c95'},
-  {id:'blueberry',name:'Blueberry Matcha Taho',desc:'Blueberry compote · matcha · taho · pearls',price:9,image:'./public/images/drink-blueberry-matcha-taho.png?v=20261007-1',accent:'#40598f'},
-  {id:'mango',name:'Mango Matcha Taho',desc:'Mango purée · matcha · taho · pearls',price:9,image:'./public/images/drink-mango-matcha-taho.png?v=20261007-1',accent:'#d98f20'}
+  {id:'matcha',name:'Matcha Taho',desc:'Premium matcha · silken taho · arnibal · pearls',price:8.5,image:'./public/images/drink-matcha-taho.png?v=20261007-2',accent:'#456b1d'},
+  {id:'strawberry',name:'Strawberry Matcha Taho',desc:'Strawberry compote · matcha · taho · pearls',price:9,image:'./public/images/drink-strawberry-matcha-taho.png?v=20261007-2',accent:'#c94548'},
+  {id:'ube',name:'Ube Matcha Taho',desc:'Ube halaya · matcha · taho · pearls',price:9,image:'./public/images/drink-ube-matcha-taho.png?v=20261007-2',accent:'#6e3c95'},
+  {id:'blueberry',name:'Blueberry Matcha Taho',desc:'Blueberry compote · matcha · taho · pearls',price:9,image:'./public/images/drink-blueberry-matcha-taho.png?v=20261007-2',accent:'#40598f'},
+  {id:'mango',name:'Mango Matcha Taho',desc:'Mango purée · matcha · taho · pearls',price:9,image:'./public/images/drink-mango-matcha-taho.png?v=20261007-2',accent:'#d98f20'}
 ];
 let cart = JSON.parse(localStorage.getItem('matsya-pages-cart') || '{}');
 let promo = false;
@@ -14,7 +14,7 @@ function count(){return Object.values(cart).reduce((a,b)=>a+b,0)}
 function save(){localStorage.setItem('matsya-pages-cart',JSON.stringify(cart));renderProducts();renderCart();}
 function add(id,n=1){cart[id]=Math.max(0,(cart[id]||0)+n);if(!cart[id])delete cart[id];save()}
 function renderProducts(){
-  $('#products').innerHTML=products.map((p,i)=>`<article class="product" style="--accent:${p.accent}"><div class="product-img"><img src="${p.image}" alt="${p.name}" style="object-position:${p.position||'center'};object-fit:${p.fit||'cover'};filter:${p.filter||'none'}">${i===0?'<span>Bestseller</span>':''}</div><div class="product-copy"><div><h3>${p.name}</h3><p>${p.desc}</p></div><b>${money(p.price)}</b></div>${cart[p.id]?`<div class="qty"><button onclick="add('${p.id}',-1)">−</button><b>${cart[p.id]}</b><button onclick="add('${p.id}',1)">+</button></div>`:`<button class="add" onclick="add('${p.id}')">Add to cart +</button>`}</article>`).join('');
+  $('#products').innerHTML=products.map((p,i)=>`<article class="product" style="--accent:${p.accent}"><div class="product-img"><img src="${p.image}" alt="${p.name}" loading="lazy" decoding="async">${i===0?'<span>Bestseller</span>':''}</div><div class="product-copy"><div><h3>${p.name}</h3><p>${p.desc}</p></div><b>${money(p.price)}</b></div>${cart[p.id]?`<div class="qty"><button onclick="add('${p.id}',-1)">−</button><b>${cart[p.id]}</b><button onclick="add('${p.id}',1)">+</button></div>`:`<button class="add" onclick="add('${p.id}')">Add to cart +</button>`}</article>`).join('');
 }
 function renderCart(){
   const n=count(),sub=subtotal(),discount=promo?sub*.1:0;
